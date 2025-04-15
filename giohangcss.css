@@ -1,0 +1,233 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+	font-family: 'Roboto', sans-serif;
+}
+.gh {
+	background-color: #fecf67;
+	margin-top: 10px;
+}
+.gh i {
+	padding-right: 15px;
+	font-size: 20px;
+}
+.gh p {
+	font-size: 16px;
+	margin: 5px 0 10px 5px ;
+}
+.o1 {
+	height: 120px;
+}
+.o2 {
+	height: 250px;
+	border-bottom: solid 1px #9F9F9F;
+}
+.o1 .x {
+	position: absolute;
+	right: 27px;
+	top: 10px;
+}
+.o2 .x {
+	position: absolute;
+	right: 27px;
+	top: 10px;
+}
+.x a {
+	color:#fff;
+}
+.x a:hover {
+	text-decoration: none;
+	color:red;
+}
+.asp img {
+	width: 100%;
+}
+.asp {
+	margin-top: 10px;
+	padding:10px;
+	padding-bottom: 10px;
+	position: absolute;
+	width:30%;
+	background-color: #474646;
+}
+.infosp {
+	margin-top: 10px;
+	position: absolute;
+	right: 20px;
+	width: 229px;
+	height:112.5px;
+	background-color: #474646;
+}
+.infosp h1 {
+	margin-top: 10px;
+	font-size: 16px;
+	color:#fff;
+}
+.infosp h2 {
+	font-size: 14px;
+	color: #fecf67;
+}
+.infosp h3 {
+	margin-top: -5px;
+	font-size: 11px;
+	color: #BBBBBB;
+    font-style: italic;
+    text-decoration: line-through;
+}
+form {
+	display: flex;
+}
+form p {
+	margin-right: 5px;
+}
+form select {
+	height: 25px;
+	width: 35px;
+}
+.dathang {
+	padding:5px;
+	margin-top:15px;
+	margin-left:50%;
+	margin-bottom: 10px;
+	border-radius:10px;
+	background-color:#fecf67;
+	display:block;
+	color:black;
+	border:solid 1px #2581D7;
+	font-size:1.4rem;
+	font-style:italic;
+	width:160px;	
+}
+.dathang a {
+	color:black;
+}
+.dathang a:hover {
+	opacity: .5;
+	text-decoration: none;
+}
+.tinhtien p {
+	position: absolute;
+	top:10px;
+	color:#fff;
+}
+.tinhtien strong {color:#fecf67}
+.minus{
+	display: flex;
+}
+.minus input{
+	font-size: 14px;
+	width: 40px;
+	height: 25px;
+}
+.minus button  {
+	padding: 0;
+}
+.minus button.min{ 
+	background-color: #fecf67; 
+	border: none;
+	width: 25px;
+	height: 25px;
+}
+.minus button.max{ 
+	background-color: #fecf67;
+	border: none;
+	width: 25px;
+	height: 25px;
+
+}
+@media screen and (min-width: 768px) {
+	.infosp {
+		left:123px;
+		height:108px;
+	}
+	.o1 {
+		border-bottom: solid 1px #9F9F9F;
+		height: 400px;
+	}
+	.o2 {
+		height:400px;
+	}
+	.tinhtien {
+		margin-bottom: 10px;
+	}
+	.dathang {
+		margin-left: 75%;
+	}
+	.o1 .x {
+		right:18px;
+	}
+	.o2 .x {
+		right:16px;
+	}
+	.ghcb i {
+		margin: 0 10px 0 10px;
+	}
+	.ghcb p {
+		margin-top: 10px;
+		margin-bottom: 0;
+		color: #fff;
+		font-size: 16px;
+	}
+	.ghcb {
+		margin-top: 10px;
+	}
+	.ghcb strong {
+		color:#fecf67;
+	}
+}
+@media screen and (min-width: 992px) {
+	.ghcb p {font-size: 18px;}
+	.asp {
+		width: 25%;
+	}
+	.infosp {
+		width:300px;
+		height: 143px;
+		left:155px;		
+	}
+	.infosp h1 {
+	margin-top: 10px;
+	font-size: 20px;
+	}
+	.infosp h2 {
+		font-size: 18px;
+		color: #fecf67;
+	}
+	.infosp h3 {
+		margin-top: -5px;
+		font-size: 15px;
+	}
+	.o1 .x {
+		right:125px;
+	}
+	.o2 .x {
+		right:123px;
+	}
+	.dathang {
+		margin-left: 68%;
+		margin-top: 90px;
+		width: 250px;
+	}
+	.tinhtien p {
+		top:40px;
+		right:11%;
+		font-size: 18px;
+	}
+	.tinhtien strong {
+		margin-left: 70px;
+	}
+	.tinhtien1 p {
+		position: absolute;
+		top:10px;
+		right:11%;
+		font-size: 18px;
+		color:#fff;
+	}
+	.tinhtien1 strong {
+		margin-left: 79px;
+		color:#fecf67;
+	}
+	.ghcb p {
+		font-size: 16px;
+	}
+}

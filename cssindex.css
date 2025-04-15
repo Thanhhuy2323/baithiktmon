@@ -1,0 +1,224 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* xu  ly slide */
+	.slide-holder button {
+		width:30px;
+		height:30px;
+		background-color:transparent;
+		color:#fecf67;
+		border:none;
+		position:absolute;
+		top:50%;
+		transform:translate(0,-50%);
+	}
+	.slide-holder .lui {left: 2%;}
+	.slide-holder .toi {right: 2%;}
+	.slide {
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+/*===============spnoibat*/
+	.spmoinhat h1 {
+		color:#fecf67;
+		margin:5px;
+		padding:2px;
+		font-size:18px;
+		position: relative;
+	}
+	.spmoinhat ul {
+		margin:0;
+		padding:10px;
+		list-style: none;
+		display: flex;
+		background-color: #D1D1D1;
+	}
+	.spmoinhat li {
+		margin-bottom: 10px;
+		padding:10px;
+		min-height: 60px;
+		border-left:solid 1px black;
+	}
+	.spmoinhat li:first-child {
+		border-left:none;
+	}
+	.spmoinhat li a {
+		display:block;
+		text-decoration: none;
+	}.spmoinhat li a:after {
+		content:'';
+		clear:both;
+		display:block;
+	}
+	.spmoinhat li a img {
+		width:100%;
+		float:left;
+		margin-right: 10px;
+	}
+	.spmoinhat p {
+		text-align: center;
+		font-size:12px;
+		margin: 10px;
+		color:Black;
+	}
+	.spmoinhat .tien {
+		position: absolute;
+		left:22%;
+		bottom: -10px;
+	}
+	.spmoinhat .tien {
+		color:red;
+	}
+	/*Chuyen Tab===================*/
+	.chuyen-tab {
+		padding:10px;
+		background-color:transparent;
+		margin-bottom:10px;	
+	}
+	.chuyen-tab ul {
+		margin:0;
+		padding:0;
+		list-style:none;
+		display:flex;
+		overflow: hidden;
+	}
+	.chuyen-tab ul li {
+		cursor:pointer;
+		border:solid #BBB;
+		border-width:1px 1px 0 1px ;
+		margin:5px;
+		padding:10px 15px;
+		position: relative;
+		font-weight: bold;
+		font-family:Myriad Pro;
+		font-size:10px;
+		text-align: center;
+		background-color: #fff;
+	}
+	.chuyen-tab ul li:last-child {
+		border-right-width:1px;
+		font-weight: bold;
+		font-family:Myriad Pro;
+	}
+	.chuyen-tab li.tab-current {
+		font-weight: bold;
+		font-family:Myriad Pro;
+		color:White;
+		border:1px solid #fecf67;
+		border-bottom: none;
+		z-index: 1;
+		background-color:#fecf67;
+		border-radius:10px 10px 0 0;
+	}
+	.chuyen-tab li.tab-current:before,
+	.chuyen-tab li.tab-current:after{
+		content:'';
+		position:absolute;
+		height:1px;
+		bottom:0;
+		width: 1500px;
+		background-color:#fecf67;
+	}
+	.chuyen-tab li.tab-current:before{right:100%;}
+	.chuyen-tab li.tab-current:after{left:100%;}
+
+	.chuyen-tab > div {
+		display:none;
+	}
+	/*===============chitiettab*/
+	.tab img {
+		width: 100%;
+		margin-top:5px;
+	}
+	.tab {
+		background-color: #fecf67;
+	}
+	.tab .tb1 h1 {
+		text-align: center;
+		color:black;
+		font-size: 13px;
+		margin: 0;
+		padding: 2px;
+		background-color: #fff;
+		height:60px;
+		border-top:solid 1px black;
+	}
+	.tab .tb1 p {
+		margin-top: 0;
+		color:red;
+		font-size: 14px;
+		margin: 0;
+		background-color: #fff;
+		position: absolute;
+		bottom: 5px;
+		left:28%;
+		font-weight: bold;
+	}
+	.tab .tb1 {
+		background-color: #fecf67;
+		margin-top: -5px;
+	}
+	.tab .xt {
+		margin-top: 5px;
+		text-align: right;
+	}
+	.tab .xt a {
+		color: black;
+	}
+	.tab a:hover {
+		text-decoration: none;
+	}
+	.xt a:hover {
+		color: #7D7D7D;
+	}
+	.tb1 img { transition: all .2s ease-in-out; }
+	.tb1 img:hover { transform: scale(0.9); }
+	.sp1:hover {opacity: 0.7;}
+@media screen and (min-width: 768px) {
+	.xtc {
+		text-align: right;
+		color: #E8E8E8;
+	}
+	.xtc:hover {
+		text-decoration: none;
+		color:#fecf67;
+	}
+	.spmoinhat .tien {
+		left:30%;
+		bottom: -15px;
+	}
+	.tab .tb1 p {
+		left: 35%;
+	}
+	.tab .tb1 h1 {
+		padding-top: 5px;
+		font-size: 13px;
+	}
+	.chuyen-tab ul li {
+		width:160px;
+		font-size: 14px;
+	}
+	.spmoinhat p {
+		font-size:0.8rem
+	}
+	}
+@media screen and (min-width: 992px) {
+	.spmoinhat .tien {
+		left:30%;
+	}
+	.tab .tb1 h1 {
+		font-size: 14px;
+		padding-top: 2px;
+	}
+	.tab .tb1 p {
+		left: 37%;
+		bottom: 10px;
+	}
+	.chuyen-tab ul li {
+		width:270px;
+		font-size: 16px;
+	}
+	.spmoinhat p {
+		font-size: 1rem;
+	}
+}

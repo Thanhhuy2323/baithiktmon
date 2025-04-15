@@ -1,0 +1,234 @@
+@charset "utf-8";
+/* CSS Document */
+.chidan i {
+		margin: 0 10px 0 10px;
+	}
+	.chidan p {
+		color:#fff;
+		font-size: 16px;
+	}
+	.chidan {
+		margin-top: 10px;
+	}
+	.chidan strong {
+		color:#fecf67;
+	}
+	.slide .slider-for img {
+		width:100%;
+	}
+	.slide .slider-nav {
+		margin-top:10px;
+	}
+	.slide .slider-nav img {
+		width:160px;
+		margin:0 5px;
+	}
+	.slide button {
+		width:30px;
+		height:30px;
+		background-color:transparent;
+		color:#fecf67;
+		border:none;
+		position:absolute;
+		top:40%;
+		transform:translate(0,-50%);
+	}
+	.slide .lui {left: 2%;}
+	.slide .toi {right: 2%;}
+	/*info thong tin*/
+	.info_ct h1 {
+		margin-top: 5px;
+		font-size: 26px;
+		color: #fff;
+	}
+	.info_ct h2 {
+		margin-top: -5px;
+		font-size: 12px;
+		color:#797979;
+	}
+	.info_ct p {
+		color:red;
+		font-size: 20px;
+	}
+	.info_ct h3 {
+		margin-top: -10px;
+		font-size: 14px;
+		color:#BCBCBC;
+	}
+	.info_ct button {margin-top: 10px;}
+	.tvgh {
+		width: 200px;
+		height: 50px;
+		border: none;
+		border-radius: 10px;
+		background-color: #fecf67;
+	}
+	.tvgh a {
+		color:#fff;
+	}
+	.tvgh a:hover {
+		color:red;
+		text-decoration: none;
+	}
+	.mn {
+		width: 140px;
+		height: 50px;
+		border: solid 2px #fecf67;
+		border-radius: 10px;
+		background-color: transparent;
+	}
+	.mn a {
+		color:#fecf67;
+	}
+	.mn a:hover {
+		color:#fff;
+		text-decoration: none;
+	}
+		/* xu ly chon size day*/
+	.sizeday {
+		margin-top:25px;
+	}
+	ul.sizeday {
+		list-style:none;
+		display:flex;
+		padding:0;
+	}
+	ul.sizeday li {
+		margin:-15px 5px;
+		border:solid 1px #333;
+		width:30px;
+		height:30px;
+		border-radius:5px;
+		background-color:white;
+		text-align:center;
+		line-height:30px;
+		font-family:Myriad Pro;
+	}
+	ul.sizeday li.dangchon {
+		color:white;
+		background-color:#fecf67;
+		border:none;
+	}
+	/*tt==========*/
+	.tt {margin-top: 10px;}
+	.tt li {
+		font-size: 14px;
+		color:#fecf67;
+	}
+	.ts li {
+		list-style: none;
+		color:#fff;
+		font-size: 16px;
+	}
+	.ts li:first-child {
+		font-size: 20px;
+		color:#fecf67;
+	}
+	.hinhanh img {
+		width:100%;
+		padding-bottom: 10px;
+	}
+	.hinhanh {
+		margin-top: 10px;
+	}
+/*===============spnoibat*/
+	.spmoinhat h1 {
+		color:#fecf67;
+		margin:5px;
+		padding:2px;
+		font-size:18px;
+		position: relative;
+	}
+	.spmoinhat ul {
+		margin:0;
+		padding:10px;
+		list-style: none;
+		display: flex;
+		background-color: #D1D1D1;
+	}
+	.spmoinhat li {
+		margin-bottom: 10px;
+		padding:10px;
+		min-height: 60px;
+		border-left:solid 1px black;
+	}
+	.spmoinhat li:first-child {
+		border-left:none;
+	}
+	.spmoinhat li a {
+		display:block;
+		text-decoration: none;
+	}.spmoinhat li a:after {
+		content:'';
+		clear:both;
+		display:block;
+	}
+	.spmoinhat li a img {
+		width:100%;
+		float:left;
+		margin-right: 10px;
+	}
+	.spmoinhat p {
+		text-align: center;
+		font-size:12px;
+		margin: 10px;
+		color:Black;
+	}
+	.spmoinhat .tien {
+		position: absolute;
+		left:22%;
+		bottom: -10px;
+	}
+	.spmoinhat .tien {
+		color:red;
+	}
+@media screen and (min-width: 768px) {
+	.spmoinhat .tien {
+		left:30%;
+		bottom: -15px;
+	}
+	.tvgh {
+		width:190px;
+	}
+	.mn {
+		width:130px;
+	}
+	.spmoinhat p {
+		font-size:0.8rem
+	}
+}
+@media screen and (min-width: 992px) {
+	.chidan p {
+		font-size: 18px;
+	}
+	.spmoinhat .tien {
+		left:30%;
+	}
+	.info_ct h1 {font-size: 34px;}
+	.info_ct h2 {font-size: 16px;}
+	.info_ct p {font-size: 24px;}
+	.info_ct h3 {font-size: 18px;}
+	.tt li {font-size: 18px;}
+	.ts li {font-size: 20px;}
+	ul.sizeday li {
+		width:34px;
+		height:34px;
+	}
+	.tvgh {
+		width:240px;
+		height: 70px;
+	}
+	.tvgh a {font-size: 22px;}
+	.mn a {font-size: 22px;}
+	.mn {
+		width:180px;
+		height: 70px;
+	}
+	.spmoinhat p {
+		font-size:1rem
+	}
+	.spmoinhat a:hover {
+		opacity: 0.5;
+	}
+}
+	

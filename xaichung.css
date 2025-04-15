@@ -1,0 +1,497 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2rem;
+	background-color: black;
+}
+footer a:hover {
+				text-decoration:none;
+		}
+		header div {
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+.logo {width: 50px;}
+/*==================== phan form*/
+.timkiem form{
+	width:100%;
+	display:flex;
+	align-items:center;
+	}
+.timkiem input[type="search"] {
+	width:100%;
+	border:solid 1px #BBB;
+	border-radius:15px;
+	padding:10px;
+	padding-right:40px;
+	margin-top:10px;
+	background-color:#fff;
+	height:35px;
+	}
+.timkiem input[type="submit"] {
+	background-image:url(chatlieu/Search.png);
+	background-color:transparent;
+	cursor:pointer;
+	border:none;
+	width:21px;
+	height:27px;
+	text-indent: -9999px;
+	margin-left:-30px;
+	margin-top:10px;
+	}
+	.gv {
+		margin-top: 10px;
+	}
+	.kn {
+		margin-top: 10px;
+	}
+		/*=============menu-xoay*/
+#toggle-menu {
+	width:50px;
+	height:50px;
+	border:none;
+	background-color:transparent;
+	position:absolute;
+	left:10px;
+	z-index:99;
+	}
+#toggle-menu .top, #toggle-menu .bottom, #toggle-menu .middle {
+	background-color:#fecf67;
+	width:100%;
+	height:5px;
+	margin: 0 0 5px 0;
+	border-radius:5px;
+	}
+#toggle-menu .top {margin-top: 5px; }
+#toggle-menu .middle {
+	opacity:1;
+	transition: opacity 0.15s ease-out;
+	}
+#toggle-menu.xoay .middle {
+	opacity:0;
+	}
+#toggle-menu .top, #toggle-menu .bottom {
+	transition: transform 0.15s ease-out,
+		background-color 0.15s ease-out;
+	}
+#toggle-menu.xoay .top {
+	background-color:#eee;
+	transform:translate(0,9px) rotate(45deg);
+	}
+#toggle-menu.xoay .bottom {
+	background-color:#eee;
+	transform:translate(0,-11px) rotate(-45deg);
+	}
+/*=============menu*/
+#overlay-page {
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.3);
+	position: fixed;
+	left:-100%;
+	transition: left 0.25s ease-out;
+	top:0;
+	z-index: 97;
+	}
+#overlay-page.show, nav#the-menu.show {
+	left:0;
+	}
+nav#the-menu {
+	background-color:#fecf67;
+	min-height: 100%;
+	position:fixed;
+	width:50%;
+	left:-60%;
+	transition: left 0.2s ease-out;
+	top:0;
+	z-index: 98;
+	padding-left:0;
+	padding-right:0;
+	}
+nav#the-menu > ul {
+	margin-top:70px;
+	list-style:none;
+	font-size:18px;
+	}
+nav#the-menu a {
+	display:block;
+	color:black;
+	padding:10px;
+	border-bottom:solid 1px;
+	text-decoration:none;
+	}
+nav#the-menu a.active {
+/*
+, nav#the-menu > ul >li:nth-child(2) > a {
+*/
+	font-weight: bold;
+	background-color: #FECF67;
+	color:BLACK;
+}
+nav#the-menu ul li ul {
+	list-style: none;
+	padding: 0 0 0 10px;
+	display: none;
+}
+nav#the-menu ul li:nth-child(2) ul {
+	/*display: block;*/
+}
+	footer .social-links {
+		padding: 0;
+	}
+	footer .social-links ul {
+		background-color: #fecf67;
+		display:flex;
+		list-style: none;
+		padding-left: 15px;
+	}
+	footer .social-links a {
+		font-size:1.4rem;
+		margin-right: 10px;
+		color: #424242;
+	}
+	footer .social-links a:hover {
+		color: red;
+	}
+	footer .thongtin a {
+		color:#424242;
+	}
+	footer .thongtin a:hover {
+		color:red;
+	}
+/*=========footer*/
+/*dichvu*/
+.dichvu {
+	list-style: none;
+	margin-top: 5px;
+}
+.dichvu p {
+	margin-bottom: 2px;
+	font-size: 20px;
+	color:#fecf67;
+	border-bottom: solid 2px #686868;
+	}
+.dichvu a {
+	padding-left:20px;
+	font-size: 18px;
+	color:#DBDBDB;
+	}
+.dichvu a:hover {
+	color:#fecf67;
+	}
+.vechungtoi {
+	list-style: none;
+	margin-top: 5px;
+}
+.vechungtoi p {
+	margin-bottom: 2px;
+	font-size: 20px;
+	color: #fecf67;
+	border-bottom: solid 2px #686868;
+	}
+.vechungtoi a {
+	padding-left:20px;
+	font-size: 18px;
+	color:#DBDBDB;
+	}
+.vechungtoi a:hover {
+	color:#fecf67;
+	}
+/*===========blog*/
+	.blts img {
+		width: 100%;
+	}
+	.blts li {
+		margin-top: 5px;
+		list-style: none;
+	}
+	.blts p {
+		color:#fecf67;
+		border-bottom: solid 2px #ABABAB;
+	}
+	.blts ul {
+		padding: 0;
+	}
+	.blts a {
+		color:#FFF;
+	}
+	.blts a:hover {
+		text-decoration: none;
+		color:#fecf67;
+	}
+	.vdts p {
+		border-bottom: solid 2px #ABABAB;
+		color: #fecf67;
+	}
+	.vdts video {
+		width:100%;
+	}
+	.kn p {
+		border-bottom: solid 2px #ABABAB;
+		color: #fecf67;
+	}
+	.kn img {
+		width:100%;
+	}
+	.gv p {
+		border-bottom: solid 2px #ABABAB;
+		color: #fecf67;
+	}
+	.gv img {
+		width:100%;
+	}
+/*==========gui_mail*/
+.dangki{border-top: solid 2px #686868;}
+.dangki p {color:#fecf67;}
+.dangki h1 {color:#FFF;}
+.nhap_email p {
+	margin-bottom: 1px;
+	margin-top: 2px;
+	font-size: 18px;
+}
+.nhap_email form{
+	width:100%;
+	display:flex;
+	align-items:center;
+	}
+.nhap_email input[type="email"] {
+	width:250px;
+	border:solid 1px #BBB;
+	border-radius:5px;
+	padding:10px;
+	padding-right:40px;
+	margin-top:10px;
+	background-color:#fff;
+	height:35px;
+	}
+.nhap_email input[type="submit"] {
+	background-image:url(chatlieu/maybay.png);
+	background-repeat: no-repeat;
+	background-color:#fecf67;
+	background-position: center;
+	cursor:pointer;
+	border:none;
+	border:solid 1px #838383;
+	border-radius: 5px;
+	width:60px;
+	height:35px;
+	text-indent: -9999px;
+	margin-left:0px;
+	margin-top:10px;
+	}
+	/*lienhe===*/
+	.lienhe li {
+		list-style: none;
+		}
+	.lienhe h1 {margin-bottom: 5px;
+		font-size:16px;
+		}
+	.lienhe h2 {
+		font-size:12px;
+		color:#747474;
+		}
+	.phanhoi {display: flex;}
+	.sdt{font-size: 30px;
+		margin-left: 5px;
+		color: #fecf67;
+		}
+	.sdt:hover {color:#888888}
+	.thongtin {background-color: #fecf67;}
+	.thongtin h1 {
+		margin-top: 5px;
+		font-size: 22px;
+	}
+	.thongtin p {
+		font-size: 16px;
+		margin-bottom: 3px;
+	}
+/*============thanhtoan**/
+@media screen and (min-width: 768px) {
+	.nhap_email p {
+		margin-top: 5px;
+	}
+	nav#the-menu a.mau {
+	color:black;
+	background-color:white;
+	}
+	.the-menu {
+	margin-top:10px;
+	}
+	nav#the-menu {
+	background-color: #FFF;
+	position:relative;
+	transform:translateX(100%);
+	width:100%;
+	left:-100%;
+	}
+	nav#the-menu > ul {
+	display:flex;
+	margin-top:0;
+	margin-bottom:0;
+	justify-content:center;
+	background-color: black;
+	}
+	nav#the-menu a {
+	border-bottom:solid 1px #fecf67;
+	font-size:16px;
+	color: #fecf67;
+	}
+	nav#the-menu ul > li {
+	position: relative;
+	color:#fecf67;
+	}
+	nav#the-menu .truot {
+		padding-left: 0;
+	}
+	nav#the-menu .truot a {
+	color:black;
+	border-bottom: solid 1px black;
+	}
+	nav#the-menu > ul >li:nth-child(2) > a{
+		background-color: transparent;
+	}
+	nav#the-menu > ul >li:nth-child(2) > a:hover{
+		background-color: #fecf67
+	}
+	nav#the-menu > ul >li:nth-child(2) > a.active{
+		font-weight: bold;
+		background-color: #fecf67;
+		color:black;
+	}
+	nav#the-menu ul li ul {
+		position: absolute;
+		left:0;
+		top:100%;
+		display: none;
+		background-color: #fecf67;
+		width: 200px;
+		border-bottom: solid 1px #999;
+	}
+	nav#the-menu ul li:nth-child(2) ul {
+		display: none;
+	}
+	footer .social-links ul {
+		position: absolute;
+		right:0;
+		bottom: -15px;
+	}
+	
+}	/* ket thuc @media  */
+@media screen and (min-width: 992px) {	
+nav#the-menu li:hover a {
+	color:black;
+	background-color:#fecf67;
+	}
+nav#the-menu a {font-size:20px;}
+	.dangki {
+		border-top:none;
+	}
+	.dangki p {
+		border-bottom: solid 2px #686868;
+	}
+	.nhap_email p {
+		margin-top: 5px;
+		font-size: 20px;
+	}
+	.menu {
+		justify-content:center;}
+	}
+
+@media screen and (max-width: 992px) {
+	.thanhtoan {
+		list-style: none;
+		position: relative;
+		height:200px;
+		border-top: solid 2px #686868;
+	}
+	.dk {
+		position: absolute;
+		top: 30px;
+	}
+	.dk img {}
+	.visa {
+		position: absolute;
+		left:190px;
+		top:50px;
+	}
+	.visa img {
+		width: 30%;
+		height:30%;
+	}
+	.maestro{
+		position: absolute;
+		right:7px;
+		top:30px;
+	}
+	.paypal {
+		position: absolute;
+		bottom: -20px;
+		left:30px;
+	}
+	.paypal img {
+		width:70%;
+		height:70%;
+	}
+	.discover {
+		position: absolute;
+		left:230px;
+		bottom:10px;
+	}
+	.discover img {
+		width:70%;
+		height:70%;
+	}
+}
+@media screen and (min-width: 992px) {
+	.thanhtoan {
+		list-style: none;
+		height:150px;
+		border-top: solid 2px #686868;
+		display: flex;
+		}
+	.dk {
+		position: absolute;
+		top: 50px;
+		left:15%;
+
+	}
+	.dk img {}
+	.visa {
+		position: absolute;
+		left:32%;
+		top:50px;
+	}
+	.visa img {
+		width: 40%;
+		height:40%;
+	}
+	.maestro{
+		position: absolute;
+		left:43%;
+		top: 50px;
+	}
+	.paypal {
+		position: absolute;
+		right:24%;
+		top:20px;
+	}
+	.paypal img {
+		width:70%;
+	}
+	.discover {
+		position: absolute;
+		top:10px;
+		right:0;
+	}
+	.discover img {
+		width:50%;
+		height:50%;
+	}
+	footer .social-links a {
+		font-size: 1.8rem;
+	}
+}

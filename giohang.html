@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Giỏ Hàng</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="slick/slick.css">
+<link rel="stylesheet" href="slick/slick-theme.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="giohangcss.css">
+<link rel="stylesheet" href="xaichung.css">
+</head>
+<body>
+<div id="overlay-page" class="d-md-none"></div>
+<div class="container">
+  <header>
+    <div class="row">
+      <div class="nut-mobile col-2 d-md-none">
+        <button id="toggle-menu">
+          <div class="top"></div>
+          <div class="middle"></div>
+          <div class="bottom"></div>
+        </button>
+      </div>
+      <div class="logo col-8 col-md-4"><a href="index.html"><img src="chatlieu/logo.png" alt=""></a></div>
+      <div class="giohang col-2 col-md-1 order-md-2"><a href="giohang.html"><img src="chatlieu/Icons.png" alt=""></a></div>
+      <div class="timkiem col-12 col-md-7 order-md-1">
+        <form action="" class="search">
+          <input type="search">
+          <input type="submit" class="tim">
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <nav id="the-menu" class="the-menu">
+        <ul class="menu" style="padding-left: 0;">
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="#">Sản Phẩm <i class="fas fa-sort-down"></i></a>
+            <ul class="truot">
+              <li><a href="Dssanpham.html">Dây Chuyền</a></li>
+              <li><a href="#">Nhẫn</a></li>
+              <li><a href="#">Bông Tai</a></li>
+              <li><a href="#">Lắc Tay</a></li>
+              <li><a href="#">Sản Phẩm Khác</a></li>
+            </ul>
+          </li>
+          <li><a href="sukien.html">Sự Kiện</a></li>
+          <li><a href="#">Dịch Vụ <i class="fas fa-sort-down"></i></a>
+            <ul class="truot">
+              <li><a href="#">Thiết Kế, Gia Công Vàng,...</a></li>
+              <li><a href="#">Sửa Chữa Làm Mới Trang Sức</a></li>
+              <li><a href="#">Kinh Doanh Vàng</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Blog Trang Sức</a></li>
+          <li><a href="Tranggioithieu.html">Thông Tin</a></li>
+          <li><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="row">
+    <div class="col-12">
+      <h2>Giỏ Hàng Của Bạn</h2>
+    </div>
+  </div>
+  <div class="row" id="cart-items">
+    <!-- Sản phẩm sẽ được chèn vào đây bằng JavaScript -->
+  </div>
+
+  <footer class="container">
+    <p class="text-center">&copy; 2025 VÀNG THANH BÌNH</p>
+  </footer>
+</div>
+
+<!-- Script xử lý giỏ hàng -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("cart-items");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Chưa có sản phẩm nào trong giỏ hàng.</p>";
+    return;
+  }
+
+  function renderCart() {
+    container.innerHTML = "";
+    cart.forEach((item, index) => {
+      const div = document.createElement("div");
+      div.className = "col-12 col-md-6 mb-4";
+      div.innerHTML = `
+        <div class="card h-100">
+          <img class="card-img-top" src="${item.img}" alt="${item.name}">
+          <div class="card-body">
+            <h5 class="card-title">${item.name}</h5>
+            <p class="card-text">${item.price}</p>
+            <div class="d-flex align-items-center mb-2">
+              <label for="qty-${index}" class="mr-2">Số lượng:</label>
+              <input type="number" class="form-control qty-input" id="qty-${index}" data-index="${index}" min="1" value="${item.quantity || 1}" style="width: 80px">
+            </div>
+            <button class="btn btn-danger remove-item" data-index="${index}">Xóa</button>
+          </div>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+
+    updateTotal();
+  }
+
+  container.addEventListener("click", function (e) {
+    if (e.target.classList.contains("remove-item")) {
+      const index = e.target.getAttribute("data-index");
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+  });
+
+  container.addEventListener("change", function (e) {
+    if (e.target.classList.contains("qty-input")) {
+      const index = e.target.getAttribute("data-index");
+      const qty = parseInt(e.target.value);
+      cart[index].quantity = qty;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateTotal();
+    }
+  });
+
+  function updateTotal() {
+    const total = cart.reduce((sum, item) => {
+      const price = parseInt(item.price.replace(/\D/g, ""));
+      const qty = item.quantity || 1;
+      return sum + price * qty;
+    }, 0);
+
+    const totalDiv = document.createElement("div");
+    totalDiv.className = "col-12 mt-3";
+    totalDiv.innerHTML = `
+      <div class="alert alert-info">
+        <strong>Tổng tiền:</strong> ${total.toLocaleString()} đ
+      </div>
+      <button class="btn btn-success">Thanh toán</button>
+    `;
+
+    // Xóa phần tổng tiền cũ nếu có
+    const oldTotal = container.querySelector(".alert");
+    if (oldTotal) oldTotal.parentElement.remove();
+
+    container.appendChild(totalDiv);
+  }
+
+  renderCart();
+});
+</script>
+
+<footer class="container">
+	<div class="row">
+		<div class="dichvu col-12 col-md-6 col-lg-4">
+			<p><strong>DỊCH VỤ KHÁCH HÀNG</strong></p>
+			<li><a href="#">LIÊN HỆ </a></li>
+			<li><a href="#">CHÍNH SÁCH VẬN CHUYỂN </a></li>
+			<li><a href="#">CHÍNH SÁCH THU ĐỔI </a></li>
+			<li><a href="#">CHÍNH SÁCH BẢO HÀNH  </a></li>
+			<li><a href="#">CHÍNH SÁCH BẢO MẬT </a></li>
+			<li><a href="#">QUY CHẾ GIAO DỊCH </a></li>
+			<li><a href="#">CÂU HỎI THƯỜNG GẶP </a></li>
+		</div>
+		<div class="vechungtoi col-12 col-md-6 col-lg-4">
+			<p><strong>VỀ CHÚNG TÔI</strong></p>
+			<li><a href="#">LIÊN HỆ </a></li>
+			<li><a href="#">TẦM NHÌN VÀ SỨ MỆNHMỆNH</a></li>
+			<li><a href="#">BÁO CHÍ NÓI VỀ CHÚNG TÔI </a></li>
+		</div>
+		<div class="dangki col-12 col-md-6 col-lg-4">
+			<div class="nhap_email">
+				<p><strong>ĐĂNG KÝ NHẬN BẢN TIN KHUYẾN MÃI</strong></p>
+				<form class="mail" onsubmit="return submitEmail()">
+					<input type="email" id="emailInput" placeholder="Nhập Email của bạn" required>
+					<input type="submit" class="tim" value="Đăng ký">
+				</form>
+				<p id="resultMessage" style="color: green;"></p>
+			</div>
+			
+			<script>
+				function submitEmail() {
+					var email = document.getElementById("emailInput").value;
+					document.getElementById("resultMessage").innerText = "Cảm ơn bạn đã đăng ký: " + email;
+					// Ở đây bạn có thể gửi email đến server bằng AJAX nếu muốn
+					return false; // Ngăn trang reload lại
+				}
+			</script>
+			<div class="lienhe">
+				<h1>Gọi mua hàng (Phím 1)(8:00 - 23:00)</h1>
+					<div class="phanhoi">
+				<li class="call"><a href="#" class="goi"><img src="chatlieu/call.png" alt=""></a></li>
+				<li class="gd"><a href="#" class="sdt"> <strong>093 706 8722 </strong></a></li>
+					</div>
+				<h2>Tất cả các ngày trong tuần</h2>
+				<h1>Góp ý, khiếu nại (Phím 3)(8:00 - 20:00)</h1>
+					<div class="phanhoi">
+				<li class="call"><a href="#" class="goi"><img src="chatlieu/call.png" alt=""></a></li>
+				<li class="gd"><a href="#" class="sdt"> <strong>091 238 5118</strong></a></li>
+					</div>
+				<h2>Nghỉ chủ nhật, các ngày lễ tết</h2>
+			</div>
+		</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js"></script> 
+<script src="js/jquery-migrate.min.js"></script> 
+<script src="slick/slick.min.js"></script> 
+<script src="jsgiohang.js"></script>
+<script src="jsdungchung.js"></script>
+</body>
+</html>
